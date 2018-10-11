@@ -1,0 +1,47 @@
+ // The graph name and the semicolons are optional
+digraph prof {
+	Diagnoses -> "001-999 Diseases and injuries";
+		"001-999 Diseases and injuries" -> "001-139 Infectious And Parasitic Diseases";
+			"001-139 Infectious And Parasitic Diseases" -> "001-009 Intestinal Infectious Diseases";
+				"001-009 Intestinal Infectious Diseases" -> "001 Cholera";
+					"001 Cholera" -> "001.0 Cholera due to vibrio cholerae";
+					"001 Cholera" -> "001.1 Cholera due to vibrio cholerae el tor";
+					"001 Cholera" -> "001.9 Cholera, unspecified";
+				"001-009 Intestinal Infectious Diseases" -> "008 Intestinal infections due to other organisms";
+					"008 Intestinal infections due to other organisms" -> "008.4 Intestinal infection due to other specified bacteria";
+						"008.4 Intestinal infection due to other specified bacteria" -> "008.00 Intestinal infection due to E. coli, unspecified";
+						"008.4 Intestinal infection due to other specified bacteria" -> "008.04 Intestinal infection due to enterohemorrhagic E. coli";
+						"008.4 Intestinal infection due to other specified bacteria" -> "008.09 Intestinal infection due to other intestinal E. coli infections";
+					"008 Intestinal infections due to other organisms" -> "008.2 Intestinal infection due to aerobacter aerogenes";
+		"001-999 Diseases and injuries" -> "140-239 Neoplasms";
+		"001-999 Diseases and injuries" -> "780-799 Symptoms, Signs, And Ill-Defined Conditions";
+		"001-999 Diseases and injuries" -> "800-999 Injury And Poisoning";
+			"800-999 Injury And Poisoning" -> "800-829 Fractures";
+				"800-829 Fractures"-> "800-804 Fracture of skull";
+					"800-804 Fracture of skull" -> "801 Fracture of base of skull";
+						"801 Fracture of base of skull" -> "801.1 Closed fracture of base of skull with cerebral laceration and contusion"
+							"801.1 Closed fracture of base of skull with cerebral laceration and contusion" -> "801.10 Closed fracture of base of skull with cerebral laceration and contusion, unspecified state of consciousness"
+
+	Diagnoses -> "00-99 Procedures"
+		"00-99 Procedures" -> "18-20 Operations on the ear"
+			"18-20 Operations on the ear" -> "18 Operations on external ear"
+				"18 Operations on external ear" -> "18.1 Diagnostic procedures on external ear"
+					"18.1 Diagnostic procedures on external ear" -> "18.12 Biopsy of external ear"
+	Diagnoses -> "V01-V91 Supplementary Classification Of Factors Influencing Health Status And Contact With Health Services";
+		"V01-V91 Supplementary Classification Of Factors Influencing Health Status And Contact With Health Services" -> "V01-V06 persons with potential health hazards related to communicable diseases";
+			"V01-V06 persons with potential health hazards related to communicable diseases" -> "V02 Carrier or suspected carrier of infectious diseases";
+				"V02 Carrier or suspected carrier of infectious diseases" -> "V02.5 Carrier or suspected carrier of other specified bacterial diseases";
+					"V02.5 Carrier or suspected carrier of other specified bacterial diseases" -> "V02.51 Carrier or suspected carrier of group B streptococcus";
+	Diagnoses -> "E000-E999 Supplementary Classification Of External Causes Of Injury And Poisoning";
+		"E000-E999 Supplementary Classification Of External Causes Of Injury And Poisoning" -> "E000-E000 External cause status";
+			"E000-E000 External cause status" -> "E000 External cause status";
+				"E000 External cause status" -> "E000.0 Civilian activity done for income or pay";
+				"E000 External cause status" -> "E000.1 Military activity";
+				"E000 External cause status" -> "E000.8 Other external cause status";
+				"E000 External cause status" -> "E000.9 Unspecified external cause status";
+		"E000-E999 Supplementary Classification Of External Causes Of Injury And Poisoning"  -> "E950-E959 Suicide and self-inflicted injury";
+			"E950-E959 Suicide and self-inflicted injury" -> "E959 Late effects of self-inflicted injury";
+			"E950-E959 Suicide and self-inflicted injury" -> "E957 Suicide and self-inflicted injuries by jumping from high place";
+				"E957 Suicide and self-inflicted injuries by jumping from high place" -> "E957.1 Suicide and self-inflicted injuries by jumping from other man-made structures";
+				"E957 Suicide and self-inflicted injuries by jumping from high place" -> "E957.2 Suicide and self-inflicted injuries by jumping from natural sites";
+}
